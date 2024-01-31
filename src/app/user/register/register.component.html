@@ -1,0 +1,98 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+   <app-nav></app-nav>
+
+    <div class="container">
+      <div class="registration-form">
+        <!-- outer div for better design -->
+        <div class="outer">
+          <h1>Registration Form</h1>
+          <!-- Form Started here -->
+          <div class="inner">
+            <form [formGroup]="registrationFormGroup" (ngSubmit)="onSubmit()">
+              <div class="form-fields">
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input
+                      matInput
+                      placeholder="Username"
+                      formControlName="name"
+                    />
+                    <mat-error *ngIf="checkError('name', 'required')"
+                      >Name is required</mat-error
+                    >
+                    <mat-error *ngIf="checkError('name', 'minlength')"
+                      >Name should be more than 5 characters</mat-error
+                    >
+                    <mat-error *ngIf="checkError('name', 'maxlength')"
+                      >Name should be less than 20 characters</mat-error
+                    >
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-hint>Enter Name here</mat-hint>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input
+                      matInput
+                      placeholder="Email"
+                      formControlName="email"
+                      lowercase
+                    />
+                    <mat-error *ngIf="checkError('email', 'required')"
+                      >Email is required</mat-error
+                    >
+                    <mat-error *ngIf="checkError('email', 'maxlength')"
+                      >Email should be less than 200 characters</mat-error
+                    >
+                    <mat-error *ngIf="checkError('email', 'email')"
+                      >Please enter Valid Email</mat-error
+                    >
+                    <mat-icon matSuffix>drafts</mat-icon>
+                    <mat-hint>Enter Email here</mat-hint>
+                  </mat-form-field>
+                </p>
+
+                <p>
+                  <!-- <mat-form-field>
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" />
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker">
+                      <mat-icon matDatepickerToggleIcon
+                        >keyboard_arrow_down</mat-icon
+                      >
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field> -->
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="password" formControlName="password">
+                    <mat-error *ngIf="checkError('password', 'required')"
+                      >Password is required</mat-error
+                    >
+                    <mat-icon matSuffix>visibility</mat-icon>
+                    <mat-hint>Enter Password here</mat-hint>
+                  </mat-form-field>
+                </p>
+
+                <p>
+                  Already have an account <a routerLink="/login">Login Here!</a>
+                </p>
+
+                <p>
+                  <input class="btn" type="submit" value="submit"/>
+                  <input class="btn" type="reset" value="Reset" />
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+

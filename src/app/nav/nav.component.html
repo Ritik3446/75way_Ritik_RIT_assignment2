@@ -1,0 +1,23 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <div class="nav">
+    <input type="checkbox" id="nav-check" />
+    <div class="nav-header">
+      <div class="nav-title" routerLink="/">75Way</div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    <div class="nav-links">
+      <a *ngIf="!islogin" routerLink="/login">Login</a>
+      <a *ngIf="islogin" routerLink="/">logout</a>
+      <a routerLink="/signup">SignUp</a>
+    </div>
+  </div>
+</body>

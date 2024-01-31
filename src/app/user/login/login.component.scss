@@ -1,0 +1,109 @@
+$color_1: #333;
+$color_2: transparent;
+$color_3: black;
+$color_4: white;
+$font-family_1: roboto, verdana;
+$font-family_2: Monaco;
+$font-family_3: inherit;
+$font-family_4: Comic Sans;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family_1;
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  max-width: 100%;
+  margin: 0px;
+  height: 100vh;
+  background: url("https://wallpapers.com/images/hd/business-success-strategy-9e3neoqjyveyskog.jpg");
+}
+
+.container {
+  overflow:auto;
+}
+
+.container::-webkit-scrollbar{
+  display: flex;
+}
+
+.login-form {
+  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  overflow: auto;
+}
+
+.outer {
+  border: 1px solid gray;
+  background: linear-gradient(45deg, pink, lightblue);
+  padding: 20px 10px;
+  box-shadow: 10px 10px 10px #555;
+
+  animation: h1 {
+    text-align: center;
+    color: $color_1;
+    font-family: $font-family_2;
+    background: linear-gradient(30deg, blue, red);
+    -webkit-background-clip: text;
+    color: $color_2;
+    font-weight: 800;
+    font-family: $font-family_3;
+  }
+  p {
+    &:nth-child(3) {
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+  }
+}
+h4 {
+  text-align: center;
+  color: $color_1;
+  font-family: $font-family_2;
+}
+.inner {
+  padding: 0;
+  font-size: 1.5rem;
+  font-family: $font-family_4;
+
+  p {
+    text-align: center;
+    font-size: small;
+    margin: 0;
+  }
+  i {
+    color: $color_3;
+    opacity: 0.6;
+    line-height: 1.5rem;
+    padding: 9.5px;
+    background: transparent;
+    position: relative;
+    top: 2px;
+    border: 1px solid transparent;
+    box-shadow: 5px 5px 20px gray;
+  }
+}
+.btn {
+  padding: 5px 5px;
+  margin: 15px 15px 0px 15px;
+  width: 30%;
+  background: linear-gradient(40deg, lightblue, pink);
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: 0.5s 0s ease-out;
+  box-shadow: 5px 5px 20px gray;
+  &:hover {
+    background: linear-gradient(blue, green);
+    color: $color_4;
+    font-size: 1.2rem;
+  }
+}

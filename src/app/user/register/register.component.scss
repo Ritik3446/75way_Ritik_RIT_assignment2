@@ -1,0 +1,113 @@
+$color_1: #333;
+$color_2: transparent;
+$color_3: black;
+$color_4: white;
+
+* {
+  padding: 0;
+  margin: 0;
+  &:focus {
+    outline: none;
+  }
+}
+body {
+  background: url("https://wallpapers.com/images/hd/business-success-strategy-9e3neoqjyveyskog.jpg");
+  background-repeat: repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.registration-form {
+  margin-top: 20px;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  overflow: auto;
+}
+
+.outer {
+  border: 1px solid gray;
+  background: linear-gradient(45deg, pink, lightblue);
+  padding: 20px 10px;
+  box-shadow: 10px 10px 10px #555;
+  animation: h1 {
+    text-align: center;
+    color: $color_1;
+    background: linear-gradient(30deg, blue, red);
+    -webkit-background-clip: text;
+    color: $color_2;
+    font-weight: 800;
+  }
+  p {
+    &:nth-child(3) {
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+  }
+}
+h4 {
+  text-align: center;
+  color: $color_1;
+}
+.inner {
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+
+  p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: small;
+
+    mat-form-field {
+      max-width: 100%;
+      margin: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  i {
+    color: $color_3;
+    opacity: 0.6;
+    line-height: 1.5rem;
+    padding: 9.5px;
+    background: transparent;
+    position: relative;
+    top: 2px;
+    border: 1px solid transparent;
+    box-shadow: 5px 5px 20px gray;
+  }
+}
+.btn {
+  padding: 5px 5px;
+  margin: 15px 15px 0px 15px;
+  width: 50%;
+  background: linear-gradient(40deg, lightblue, pink);
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: 0.5s 0s ease-out;
+  box-shadow: 5px 5px 20px gray;
+  &:hover {
+    background: linear-gradient(30deg, blue, green);
+    color: $color_4;
+    font-size: 1.2rem;
+  }
+}
+
+// Media queries for responsiveness
+@media only screen and (max-width: 768px) {
+  .registration-form {
+    width: 90%; // Adjust the width for smaller screens
+  }
+}

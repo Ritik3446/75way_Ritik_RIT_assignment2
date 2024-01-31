@@ -1,0 +1,65 @@
+body{
+    height:100vh;
+    background-color: whitesmoke;
+}
+
+.home-container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  /* Styling the home heading */
+  .home-container h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  /* Styling the image section */
+  .image-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 10px;
+      margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column; /* Stack images vertically on smaller screens */
+      align-items: center;
+      margin:10px;
+
+      img {
+        margin: 10px 0; /* Add space between stacked images */
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+        img {
+          margin: 10px; /* Add space around images on even smaller screens */
+        }
+      }
+  }
+
+  /* Styling individual images */
+  .image-section img {
+    height: 200px;
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  /* Styling the home paragraphs */
+  .home-container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      max-width: 90%; /* Adjust the container width for smaller screens */
+    }
+  }

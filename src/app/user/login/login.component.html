@@ -1,0 +1,65 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <app-nav></app-nav>
+    <div class="container">
+      <div class="login-form">
+        <!-- outer div for better design -->
+        <div class="outer">
+          <h1>Login Form</h1>
+          <!-- Form Started here -->
+          <div class="inner">
+            <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+              <p class="input">
+                <mat-form-field appearance="fill" class="input">
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput
+                    placeholder="Email"
+                    formControlName="email"
+                  />
+                  <mat-error *ngIf="checkError('email', 'required')"
+                    >Email is required</mat-error
+                  >
+                  <mat-error *ngIf="checkError('email', 'maxlength')"
+                    >Email should be less than 200 characters</mat-error
+                  >
+                  <mat-error *ngIf="checkError('email', 'email')"
+                    >Please enter Valid Email</mat-error
+                  >
+                  <mat-icon matSuffix>person</mat-icon>
+                  <mat-hint>Enter email here</mat-hint>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field appearance="fill">
+                  <mat-label>Password</mat-label>
+                  <input
+                    matInput
+                    [type]="showPassword ? 'text' : 'password'"
+                    formControlName="password"
+                  />
+                  <mat-error *ngIf="checkError('password', 'required')"
+                    >Password is required</mat-error
+                  >
+                  <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                    {{ showPassword ? "visibility_off" : "visibility" }}
+                  </mat-icon>
+                </mat-form-field>
+              </p>
+              <p>
+                Dont have an account <a routerLink="/register">Register Here!</a>
+              </p>
+
+              <p>
+                <input class="btn" type="submit" value="Submit" />
+                <input class="btn" type="reset" value="Reset" />
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

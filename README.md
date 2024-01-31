@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Note:
+i have done code for api also but i have commented that code because it will not work without an api.
+
+Any valid email and password can be used to login .
+
+If api is available just uncomment the code done for api call in login and register component.

@@ -1,0 +1,63 @@
+<body>
+  <app-nav></app-nav>
+  <h1>Transaction History</h1>
+  <div class="container">
+    <div id="data-grid">
+      <dx-data-grid
+        id="gridContainer"
+        [dataSource]="dataSource"
+        [showBorders]="true"
+        (onSelectionChanged)="onSelectionChanged($event)"
+        [columnMinWidth]="55"
+      >
+        <dxo-paging [enabled]="false"></dxo-paging>
+        <dxo-scrolling columnRenderingMode="virtual"></dxo-scrolling>
+        <dxo-editing
+          mode="cell"
+          [allowUpdating]="true"
+          [allowAdding]="true"
+          [allowDeleting]="true"
+        >
+        </dxo-editing>
+        <dxo-selection mode="multiple"></dxo-selection>
+
+        <dxi-column
+          dataField="id"
+          [minWidth]="100"
+        ></dxi-column>
+        <dxi-column
+          dataField="senderName"
+
+          [minWidth]="150"
+        ></dxi-column>
+        <dxi-column
+          dataField="recieverName"
+
+          [minWidth]="150"
+        ></dxi-column>
+        <dxi-column dataField="amount" [allowEditing]="true" [minWidth]="100">
+            <dxo-format [type]="'currency'" [precision]="2"></dxo-format>
+            <ng-template dxo-template="cellTemplate" let-data="data">
+                <div [class]="data.data.amount < 0 ? 'reddata' : 'greendata'">
+                    {{ data.value }}
+                </div>
+            </ng-template>
+        </dxi-column>
+        <dxo-toolbar>
+          <dxi-item name="addRowButton" showText="always"> </dxi-item>
+          <dxi-item location="after" [width]="20">
+            <dx-button
+              (onClick)="deleteRecords()"
+              [disabled]="!selectedItemKeys.length"
+              icon="trash"
+              text="Delete Selected Records"
+            >
+            </dx-button>
+          </dxi-item>
+        </dxo-toolbar>
+
+      </dx-data-grid>
+      <button class="exportbutton" (click)="exportexcel()">Export to Excel</button>
+    </div>
+  </div>
+</body>
